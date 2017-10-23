@@ -1,6 +1,6 @@
-# DBW Node
+# Drive-By-Wire Node
 
-## Drive-by-wire Node
+## Overview
 
 The DBW node is responsible for publishing throttle, brake and steering set-point values for the car's lower level control system to execute. Most of the node has been kept as simple as possible in order to help with the debugging and feature development that is likely to occur as real-world testing commences. The controller was developed in a simulator with a target operating velocity of 10 MPH.
 

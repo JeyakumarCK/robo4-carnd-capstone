@@ -67,4 +67,6 @@ roslaunch launch/site.launch
 ```
 
 ### Documentation
-[DBW Node](ros/src/twist_controller/README.md)
+* [Traffic Light Detector Node](ros/src/tl_detector/README.md)
+* [Waypoint updater Node](ros/src/waypoint_updater/README.md)
+* [Drive-By-Wire Node](ros/src/twist_controller/README.md)
