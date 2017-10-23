@@ -1,4 +1,4 @@
-# WAYPOINT UPDATER Node
+# Waypoint Updater Node
 
 ## Overview
 
