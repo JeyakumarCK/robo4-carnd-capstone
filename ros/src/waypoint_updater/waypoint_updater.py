@@ -187,6 +187,17 @@ class WaypointUpdater(object):
             if (self.ow_id < self.next_indices+50) and (self.ow_id > self.next_indices):
                 self.tw_id = self.ow_id
                 is_red_light_present = True
+        # set distance from next_indices to traffic_waypoint.
+        if self.tw_id > next_indices:
+            target_distance = distance(self.waypoints, self.tw_id, next_indices) - self.stopping_distance_buf$
+        else:
+            target_distance = 0
+        # calculate target_deccel from current velocity and distance.
+        square_v = self.current_velocity * self.current_velocity
+        if target_distance > 0:
+            target_deccel = min(square_v / 2 / target_distance, self.deccel)
+        else:
+            target_deccel = self.deccel
 
         if self.final_waypoints is not None:
             if is_red_light_present:
