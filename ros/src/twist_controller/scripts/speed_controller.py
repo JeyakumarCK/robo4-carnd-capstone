@@ -28,6 +28,11 @@ class SpeedController(object):
             # Only brake is the velocity error is greater than threshold
             if abs(error) > self.v_error_braking_threshold or demand < self.v_min_braking_threshold:
                 brake = -val
+        # When target velocity and actual velocity are close to zero,
+        # set brake to constant value.
+        if ((demand < abs(0.2)) and (x < abs(0.2))):
+            # in dbw_node.py multiplying brake by 200, so brake constant value set to 3
+            brake = max(3, brake)
 
         return throttle, brake
 
